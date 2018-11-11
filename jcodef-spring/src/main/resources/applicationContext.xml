@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+        http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+       	http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+	<!-- <mvc:default-servlet-handler /> -->
+	<context:annotation-config />
+	<context:component-scan base-package="cn.osxm" />
+	<mvc:annotation-driven>
+	</mvc:annotation-driven>
+
+	<!-- For Teach -->
+	<bean name="/hello2" class="cn.osxm.jcodef.spring.controller.HelloWorldController2" />
+	<bean name="/hello3" class="cn.osxm.jcodef.spring.controller.HelloWorldController3" />
+ 
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+	
+    <bean id="hello4" class="cn.osxm.jcodef.spring.controller.HelloWorldController4" />
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/hello4.do">hello4</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>
