@@ -22,6 +22,7 @@ public class Chart {
 
 	private String description;
 
+
 	public int getId() {
 		return id;
 	}

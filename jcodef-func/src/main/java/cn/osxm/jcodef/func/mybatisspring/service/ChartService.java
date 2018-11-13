@@ -20,4 +20,6 @@ import cn.osxm.jcodef.func.mybatisspring.model.Chart;
 public interface ChartService {
 
 	public Chart getChartById(int id);
+	
+	public void insert(Chart chart);
 }

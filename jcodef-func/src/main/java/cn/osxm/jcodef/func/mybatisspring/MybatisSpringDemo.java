@@ -36,6 +36,12 @@ public class MybatisSpringDemo {
 		ChartService chartService = (ChartService) context.getBean("chartService");
 		Chart chart = chartService.getChartById(1);
 		System.out.println(chart.getName());
+		
+		Chart newchart = new Chart();
+		newchart.setName("Hello World Chart2");
+		newchart.setDescription("This is New Dashx Chart");
+		chartService.insert(newchart);
+		
 	}
 
 }

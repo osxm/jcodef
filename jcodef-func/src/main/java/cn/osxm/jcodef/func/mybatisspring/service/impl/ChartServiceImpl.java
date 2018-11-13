@@ -31,4 +31,8 @@ public class ChartServiceImpl implements ChartService {
 		return chartMapper.getChartById(id);
 	}
 
+	public void insert(Chart chart) {
+		chartMapper.insertChart(chart);	
+	}
+
 }

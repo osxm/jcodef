@@ -19,4 +19,6 @@ import cn.osxm.jcodef.func.mybatisspring.model.Chart;
 
 public interface ChartMapper {
 	Chart getChartById(int id);
+	
+	void insertChart(Chart chart);
 }
