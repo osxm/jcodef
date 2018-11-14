@@ -4,4 +4,9 @@
 	<select id="getChartById" parameterType="int" resultType="cn.osxm.jcodef.func.mybatis.model.Chart">
 		select * from base_chart where id=#{id}
 	</select>
+
+	<insert id="insertChart" parameterType="cn.osxm.jcodef.func.mybatis.model.Chart">
+		insert into base_chart(name, description)
+		values( #{name}, #{description})
+	</insert>
 </mapper>

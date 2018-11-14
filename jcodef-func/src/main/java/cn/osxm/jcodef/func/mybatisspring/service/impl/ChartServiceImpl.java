@@ -9,6 +9,11 @@
 
 package cn.osxm.jcodef.func.mybatisspring.service.impl;
 
+
+
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
 import cn.osxm.jcodef.func.mybatisspring.mapper.ChartMapper;
 import cn.osxm.jcodef.func.mybatisspring.model.Chart;
 import cn.osxm.jcodef.func.mybatisspring.service.ChartService;
@@ -30,7 +35,8 @@ public class ChartServiceImpl implements ChartService {
 	public Chart getChartById(int id) {
 		return chartMapper.getChartById(id);
 	}
-
+	
+	@Transactional(propagation=Propagation.NOT_SUPPORTED) 
 	public void insert(Chart chart) {
 		chartMapper.insertChart(chart);	
 	}

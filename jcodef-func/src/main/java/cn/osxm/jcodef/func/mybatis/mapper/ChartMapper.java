@@ -12,11 +12,13 @@ package cn.osxm.jcodef.func.mybatis.mapper;
 import cn.osxm.jcodef.func.mybatis.model.Chart;
 
 /**
-  * @ClassName: ChartMapper
-  * @Description: TODO
-  * @author osxm:oscarxueming
-  */
+ * @ClassName: ChartMapper
+ * @Description: TODO
+ * @author osxm:oscarxueming
+ */
 
 public interface ChartMapper {
 	Chart getChartById(int id);
+
+	void insertChart(Chart chart);
 }

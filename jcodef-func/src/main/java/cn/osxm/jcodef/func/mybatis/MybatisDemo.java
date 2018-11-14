@@ -48,7 +48,8 @@ public class MybatisDemo {
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
 		// 2.打开Session
-		SqlSession session = sqlSessionFactory.openSession();
+		boolean autoCommit = true;
+		SqlSession session = sqlSessionFactory.openSession(autoCommit);
 		try {
 			// 3.1 使用session直接进行查询
 			Chart chart = (Chart) session.selectOne("cn.osxm.jcodef.func.mybatis.mapper.ChartMapper.getChartById", 1);
@@ -58,6 +59,12 @@ public class MybatisDemo {
 			ChartMapper chartMapper = session.getMapper(ChartMapper.class);
 			chart = chartMapper.getChartById(1);
 			System.out.println(chart.getName());
+			
+			// 3.3 使用映射接口插入数据
+			Chart newchart = new Chart();
+			newchart.setName("Hello World Chart3");
+			newchart.setDescription("Insert by MybatisDemo");
+			chartMapper.insertChart(newchart);
 		} finally {
 			session.close();
 		}
