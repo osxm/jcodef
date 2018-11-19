@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+        http://cxf.apache.org/jaxrs  http://cxf.apache.org/schemas/jaxrs.xsd
+        http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+	<!--1. For Demo -->
+	<jaxws:server id="demoSoapWsServer" serviceClass="cn.osxm.jcodef.springcxf.service.impl.DemoSoapWsServiceImpl"
+		address="/demoSoapWsServer" />
+	<jaxws:endpoint id="demoSoapWsEndPoint" implementor="cn.osxm.jcodef.springcxf.service.impl.DemoSoapWsServiceImpl"
+		address="/demoSoapWsEndPoint" />
+	<!--1.1 Security -->
+	<jaxws:endpoint id="demoSoapWsEndSecurityPoint" implementor="cn.osxm.jcodef.springcxf.service.impl.DemoSoapWsServiceImpl"
+		address="/demoSoapWsEndSecurityPoint">
+		<jaxws:inInterceptors>
+			<bean class="org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor">
+				<constructor-arg>
+					<map>
+						<entry key="action" value="UsernameToken" />
+						<entry key="passwordType" value="PasswordText" />
+						<entry key="user" value="osxm" />
+						<entry key="passwordCallbackClass" value="cn.osxm.jcodef.springcxf.security.ServerPasswordCallback" />
+					</map>
+				</constructor-arg>
+			</bean>
+		</jaxws:inInterceptors>
+	</jaxws:endpoint>
+
+	<!-- for Pega 
+	<bean id="participantService" class="com.osxm.ws.participant.service.impl.ParticipantService" />
+	<jaxrs:server id="participantRestService" address="/participant">
+		<jaxrs:serviceBeans>
+			<ref bean="participantService" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+			<bean class="com.osxm.ws.base.except.NplmWsExceptionMapper" />
+		</jaxrs:providers>
+	</jaxrs:server>-->
+	</beans>

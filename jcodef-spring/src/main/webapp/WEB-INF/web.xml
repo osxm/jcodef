@@ -18,14 +18,23 @@
 		<url-pattern>*.htm</url-pattern>
 		<url-pattern>*.swf</url-pattern>
 	</servlet-mapping>
-	
+	 <!-- cxf -->
+    <servlet>  
+        <servlet-name>CXFServlet</servlet-name>  
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>  
+    </servlet>  
+    <servlet-mapping>  
+        <servlet-name>CXFServlet</servlet-name>  
+        <url-pattern>/webservice/*</url-pattern>  
+    </servlet-mapping>  
+    <!-- Spring -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener
 		</listener-class>
 	</listener>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:applicationContext.xml</param-value>
+		<param-value>classpath:applicationContext.xml,classpath:spring-cxf-rest-soap-service.xml</param-value>
 	</context-param>
 
 	<servlet>
@@ -42,5 +51,5 @@
 	<servlet-mapping>
 		<servlet-name>dispatcherServlet</servlet-name>
 		<url-pattern>/</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping>-->
 </web-app>

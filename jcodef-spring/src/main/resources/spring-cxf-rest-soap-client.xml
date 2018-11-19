@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:jaxrs-client="http://cxf.apache.org/jaxrs-client"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+        http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+        http://cxf.apache.org/jaxrs-client http://cxf.apache.org/schemas/jaxrs-client.xsd">
+
+	<context:property-placeholder location="classpath:spring-cxf-rest-soap-client.properties" ignore-unresolvable="true" />
+	<!-- Demo1 SOAP and Rest Client -->
+	<bean id="clientPasswordCallback" class="cn.osxm.jcodef.springcxf.client.ClientPasswordCallback"></bean>
+
+	<jaxws:client id="demoSoapWsClient" serviceClass="cn.osxm.jcodef.springcxf.service.DemoSoapWsService"
+		address="${demoSoapWsClientAddress}" />
+	<jaxws:client id="demoSoapWsSecurityClient" serviceClass="cn.osxm.jcodef.springcxf.service.DemoSoapWsService"
+		address="${demoSoapWsSecurityClientAddress}">
+		<jaxws:outInterceptors>
+			<bean class="org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor">
+				<constructor-arg>
+					<map>
+						<entry key="action" value="UsernameToken" />
+						<entry key="passwordType" value="PasswordText" />
+						<entry key="user" value="nplm" />
+						<entry key="passwordCallbackRef">
+							<ref bean="clientPasswordCallback" />
+						</entry>
+					</map>
+				</constructor-arg>
+			</bean>
+		</jaxws:outInterceptors>
+		<!-- <jaxws:inInterceptors> <bean class="org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor"> <constructor-arg> <map> <entry key="action" 
+			value="UsernameToken" /> <entry key="passwordType" value="PasswordText" /> <entry key="user" value="usertest" /> <entry key="passwordCallbackRef"> 
+			<ref bean="clientPasswordCallback" /> </entry> </map> </constructor-arg> </bean> </jaxws:inInterceptors> -->
+	</jaxws:client>
+
+	<jaxrs-client:client id="demoRestWsClient" address="${demoRestWsClientAddress}"
+		serviceClass="cn.osxm.jcodef.springcxf.service.DemoRestWsService" />
+
+</beans>
