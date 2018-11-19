@@ -13,8 +13,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import cn.osxm.jcodef.springcxf.client.DemoRestWsService;
+import cn.osxm.jcodef.springcxf.client.DemoSoapWsService;
 import cn.osxm.jcodef.springcxf.model.Demo;
-import cn.osxm.jcodef.springcxf.service.DemoSoapWsService;
+
 
 /**
  * @ClassName: DemoSoapWsClient
@@ -40,12 +41,12 @@ public class DemoSoapWsClient {
 		
 		
 		  // test for security client
-       /* DemoSoapWsService demoSoapWsServiceSec = (DemoSoapWsService) context.getBean("demoSoapWsSecurityClient");
-        //demo = demoSoapWsServiceSec.get();
+        DemoSoapWsService demoSoapWsServiceSec = (DemoSoapWsService) context.getBean("demoSoapWsSecurityClient");
+        demo = demoSoapWsServiceSec.get();
         System.out.println("demoSoapWsSecurityClient:" + demo.getName());
         
         //2.for Rest Web Service
-        DemoRestWsService DemoRestWsService = (DemoRestWsService) context.getBean("demoRestWsClient");
+        /* DemoRestWsService DemoRestWsService = (DemoRestWsService) context.getBean("demoRestWsClient");
         String str = DemoRestWsService.run();
         System.out.println("DemoRestWsService:" + str);*/
         

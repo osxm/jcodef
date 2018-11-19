@@ -30,7 +30,7 @@ public class ClientPasswordCallback implements CallbackHandler {
         for(int i=0;i<callbacks.length;i++){  
             WSPasswordCallback ps=(WSPasswordCallback) callbacks[i];  
             ps.setPassword("111111");  
-            ps.setIdentifier("nplm");  
+            ps.setIdentifier("osxm");  
         }  
     }
 }

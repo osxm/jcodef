@@ -29,7 +29,7 @@ public class ServerPasswordCallback implements CallbackHandler {
 	public void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException {
 		for (int i = 0; i < callbacks.length; i++) {
 			WSPasswordCallback pc = (WSPasswordCallback) callbacks[i];
-			if (pc.getIdentifier().equals("oxsm")) {
+			if (pc.getIdentifier().equals("osxm")) {
 				pc.setPassword("111111");
 				return;
 			}

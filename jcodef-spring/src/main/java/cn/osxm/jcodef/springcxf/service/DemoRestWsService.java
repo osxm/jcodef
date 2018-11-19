@@ -1,9 +1,9 @@
 /**
- * @Title: DemoSoapWsService.java
+ * @Title: DemoRestWsService.java
  * @Package cn.osxm.jcodef.springcxf.service
  * @Description: TODO
  * @author osxm:oscarxueming
- * @date 2018年11月19日 上午7:15:37
+ * @date 2018年11月20日 上午4:31:53
  * @version V1.0
  */
 
@@ -15,12 +15,13 @@ import javax.jws.WebService;
 import cn.osxm.jcodef.springcxf.model.Demo;
 
 /**
- * @ClassName: DemoSoapWsService
+ * @ClassName: DemoRestWsService
  * @Description: TODO
  * @author osxm:oscarxueming
  */
 @WebService
-public interface DemoSoapWsService {
+public interface DemoRestWsService {
+	
 	@WebMethod
 	public Demo get();
 }

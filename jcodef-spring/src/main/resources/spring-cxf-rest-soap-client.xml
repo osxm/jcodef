@@ -9,13 +9,14 @@
         http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
         http://cxf.apache.org/jaxrs-client http://cxf.apache.org/schemas/jaxrs-client.xsd">
 
-	<context:property-placeholder location="classpath:spring-cxf-rest-soap-client.properties" ignore-unresolvable="true" />
+	<context:property-placeholder location="classpath:spring-cxf-rest-soap-client.properties"
+		ignore-unresolvable="true" />
 	<!-- Demo1 SOAP and Rest Client -->
 	<bean id="clientPasswordCallback" class="cn.osxm.jcodef.springcxf.client.ClientPasswordCallback"></bean>
 
-	<jaxws:client id="demoSoapWsClient" serviceClass="cn.osxm.jcodef.springcxf.service.DemoSoapWsService"
+	<jaxws:client id="demoSoapWsClient" serviceClass="cn.osxm.jcodef.springcxf.client.DemoSoapWsService"
 		address="${demoSoapWsClientAddress}" />
-	<jaxws:client id="demoSoapWsSecurityClient" serviceClass="cn.osxm.jcodef.springcxf.service.DemoSoapWsService"
+	<jaxws:client id="demoSoapWsSecurityClient" serviceClass="cn.osxm.jcodef.springcxf.client.DemoSoapWsService"
 		address="${demoSoapWsSecurityClientAddress}">
 		<jaxws:outInterceptors>
 			<bean class="org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor">
@@ -23,7 +24,7 @@
 					<map>
 						<entry key="action" value="UsernameToken" />
 						<entry key="passwordType" value="PasswordText" />
-						<entry key="user" value="nplm" />
+						<entry key="user" value="osxm" />
 						<entry key="passwordCallbackRef">
 							<ref bean="clientPasswordCallback" />
 						</entry>
@@ -37,6 +38,6 @@
 	</jaxws:client>
 
 	<jaxrs-client:client id="demoRestWsClient" address="${demoRestWsClientAddress}"
-		serviceClass="cn.osxm.jcodef.springcxf.service.DemoRestWsService" />
+		serviceClass="cn.osxm.jcodef.springcxf.client.DemoRestWsService" />
 
 </beans>

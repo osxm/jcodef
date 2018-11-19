@@ -29,15 +29,15 @@
 		</jaxws:inInterceptors>
 	</jaxws:endpoint>
 
-	<!-- for Pega 
-	<bean id="participantService" class="com.osxm.ws.participant.service.impl.ParticipantService" />
-	<jaxrs:server id="participantRestService" address="/participant">
+	<!-- for Pega--> 
+	<bean id="demoRestWsService" class="cn.osxm.jcodef.springcxf.service.impl.DemoRestWsServiceImpl" />
+	<jaxrs:server id="demoRestWsServer" address="/demo">
 		<jaxrs:serviceBeans>
-			<ref bean="participantService" />
+			<ref bean="demoRestWsService" />
 		</jaxrs:serviceBeans>
 		<jaxrs:providers>
 			<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
-			<bean class="com.osxm.ws.base.except.NplmWsExceptionMapper" />
+			<!-- <bean class="com.osxm.ws.base.except.NplmWsExceptionMapper" />-->
 		</jaxrs:providers>
-	</jaxrs:server>-->
+	</jaxrs:server>
 	</beans>
