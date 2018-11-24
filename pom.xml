@@ -9,5 +9,6 @@
     <module>jcodef-func</module>
     <module>jcodef-webframe</module>
     <module>jcodef-spring</module>
+    <module>ejb</module>
   </modules>
 </project>
