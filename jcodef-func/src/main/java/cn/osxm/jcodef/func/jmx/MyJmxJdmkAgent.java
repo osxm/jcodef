@@ -17,8 +17,6 @@ import javax.management.MBeanServer;
 import javax.management.MalformedObjectNameException;
 import javax.management.NotCompliantMBeanException;
 import javax.management.ObjectName;
-
-import com.sun.jdmk.comm.HtmlAdaptorServer;
 /**
  * @ClassName: MyJmxJdmkAgent
  * @Description: TODO
@@ -35,8 +33,8 @@ public class MyJmxJdmkAgent {
 
 		//
 		ObjectName adapterName = new ObjectName("MyJmxAgent:name=htmladapter,port=8082");
-		HtmlAdaptorServer adapter = new HtmlAdaptorServer();
-		server.registerMBean(adapter, adapterName);
-		adapter.start();
+//		HtmlAdaptorServer adapter = new HtmlAdaptorServer();
+//		server.registerMBean(adapter, adapterName);
+//		adapter.start();
 	}
 }

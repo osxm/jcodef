@@ -66,11 +66,11 @@
 			<artifactId>jboss-ejb-client</artifactId>
 			<version>4.0.12.Final</version>
 		</dependency>
-		<!-- JMX -->
+		<!-- JMX
 		<dependency>
 			<groupId>com.sun.jdmk</groupId>
 			<artifactId>jmxtools</artifactId>
 			<version>1.2</version>
-		</dependency>
+		</dependency> -->
 	</dependencies>
 </project>
