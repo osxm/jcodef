@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.col {
+	background: #ccc;
+	float: left;
+	margin-left: 3.2%;
+	margin-bottom: 30px;
+	/*font style*/
+	font-size: 50px;
+	font-weight: bold;
+	color: orange;
+	text-align: center;
+	line-height: 100px;
+}
+
+/* grid4 col */
+.grid4 .col {
+	width: 20%;
+}
+
+@media screen and (max-width: 740px) {
+	.grid4 .col {
+		width: 31.2%;
+	}
+	.grid4 .col:nth-of-type(4n+1) {
+		margin-left: 3.2%;
+		clear: none;
+	}
+	.grid4 .col:nth-of-type(3n+1) {
+		margin-left: 0;
+		clear: left;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	/* change grid4 to 2-column */
+	.grid4 .col {
+		width: 48.4%;
+	}
+	.grid4 .col:nth-of-type(3n+1) {
+		margin-left: 3.2%;
+		clear: none;
+	}
+	.grid4 .col:nth-of-type(2n+1) {
+		margin-left: 0;
+		clear: left;
+	}
+}
+</style>
+</head>
+<body>
+	<div class="grid4">
+		<!-- 第一行 -->
+		<div class="col">Cell1</div>
+		<div class="col">Cell2</div>
+		<div class="col">Cell3</div>
+		<div class="col">Cell4</div>
+		<!-- 第二行 -->
+		<div class="col">Cell5</div>
+		<div class="col">Cell6</div>
+		<div class="col">Cell7</div>
+		<div class="col">Cell8</div>
+		<!-- 第三行 -->
+		<div class="col">Cell9</div>
+		<div class="col">Cell10</div>
+		<div class="col">Cell11</div>
+		<div class="col">Cell12</div>
+	</div>
+</body>
+</html>
