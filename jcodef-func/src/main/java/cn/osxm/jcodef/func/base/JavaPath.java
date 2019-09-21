@@ -9,6 +9,9 @@
 
 package cn.osxm.jcodef.func.base;
 
+import java.io.File;
+import java.io.IOException;
+
 /**
  * @ClassName: JavaPath
  * @Description: TODO
@@ -41,6 +44,22 @@ public class JavaPath {
 	}
 
 	/**
+	 * 項目路徑
+	 * @return
+	 */
+	public String getProjectPath() {
+		File file = new File("");
+		String path = "";
+		try {
+			path = file.getCanonicalPath();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return path;
+	};
+
+	/**
 	 * @Title: main
 	 * @Description: TODO
 	 * @param args
@@ -48,7 +67,8 @@ public class JavaPath {
 
 	public static void main(String[] args) {
 		JavaPath javaPath = new JavaPath();
-		System.out.println("类的根路径"+javaPath.getClassRootPath());
-		System.out.println("类的当前路径"+javaPath.getClassPath());
+		System.out.println("类的根路径" + javaPath.getClassRootPath());
+		System.out.println("类的当前路径" + javaPath.getClassPath());
+		System.out.println("当前项目路径" + javaPath.getProjectPath());
 	}
 }
