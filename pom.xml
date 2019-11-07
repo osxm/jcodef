@@ -10,5 +10,6 @@
     <module>jcodef-webframe</module>
     <module>jcodef-spring</module>
     <module>ejb</module>
+    <module>springboot</module>
   </modules>
 </project>
