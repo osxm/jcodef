@@ -43,11 +43,6 @@ public class ShiroConfig {
 		return shiroRealm;
 	}
 
-	@Bean
-	public SessionsSecurityManager securityManager() {
-		DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-		securityManager.setRealm(myShiroRealm());
-		return securityManager;
-	}
+
 
 }
