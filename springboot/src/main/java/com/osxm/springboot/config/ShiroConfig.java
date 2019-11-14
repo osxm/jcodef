@@ -8,12 +8,6 @@
  */
 package com.osxm.springboot.config;
 
-/**
-  * @ClassName: ShiroConfig
-  * @Description: TODO
-  * @author oscarchen
-  */
-import org.apache.shiro.mgt.SessionsSecurityManager;
 import org.apache.shiro.spring.web.config.DefaultShiroFilterChainDefinition;
 import org.apache.shiro.spring.web.config.ShiroFilterChainDefinition;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
@@ -38,11 +32,15 @@ public class ShiroConfig {
 	}
 
 	@Bean
-	public ShiroRealm myShiroRealm() {
+	public ShiroRealm realm() {
 		ShiroRealm shiroRealm = new ShiroRealm();
 		return shiroRealm;
 	}
 
-
-
+	@Bean("securityManager")
+	public DefaultWebSecurityManager getManager(ShiroRealm realm) {
+		DefaultWebSecurityManager manager = new DefaultWebSecurityManager();
+		manager.setRealm(realm);
+		return manager;
+	}
 }
