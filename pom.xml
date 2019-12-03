@@ -11,5 +11,6 @@
     <module>jcodef-spring</module>
     <module>ejb</module>
     <module>springboot</module>
+    <module>biz-domain</module>
   </modules>
 </project>
