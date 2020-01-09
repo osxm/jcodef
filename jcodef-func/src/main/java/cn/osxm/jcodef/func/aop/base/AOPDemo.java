@@ -33,6 +33,6 @@ public class AOPDemo {
 				new Class[] { HelloService.class }, aopHandler);
 		helloService.sayHello();
 
-	}
+	}	
 
 }

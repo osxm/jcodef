@@ -41,6 +41,6 @@ public class AOPHandler implements InvocationHandler {
 		Object ret = method.invoke(obj, args);
 		System.out.println("后置代理");
 		return ret;
-	}
+		}
 
 }
