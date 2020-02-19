@@ -23,7 +23,7 @@ import org.junit.Test;
  * @author oscarchen
  */
 
-public class HttpClientTest {
+public class HttpClientDemo {
 
 	@Test
 	public void timeOut() throws Exception {

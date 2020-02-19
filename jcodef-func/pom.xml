@@ -109,6 +109,18 @@
 			<artifactId>httpclient</artifactId>
 			<version>4.5.10</version>
 		</dependency>
-
+		<!-- commons-codec,加解密， MD等 -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.13</version>
+		</dependency>
+		<!--单元测试，Junit 4 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 </project>

@@ -3,7 +3,7 @@
  * @Package cn.osxm.jcodef.applet
  * @Description: TODO
  * @author oscarchen
- * @date 2020年1月11日
+ * @date 
  * @version V1.0
  */
 package cn.osxm.jcodef.applet;
@@ -26,6 +26,7 @@ public class MyApplet extends Applet {
 	@Override
 	public void paint(Graphics g) {
 		g.setColor(Color.RED);
+		//g.drawString("Hello World", 5, 35);
 		g.drawString(System.getenv("OS"), 5, 35);
 	}
 }
