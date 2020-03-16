@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="mydiv">
+111
+111
+</div>
+
+<script>
+var str = "";
+str += "window.screen.height=";
+str += window.screen.height;
+str += "<br>";
+
+str += "window.screen.availHeight=";
+str += window.screen.availHeight;
+str += "<br>";
+
+
+str += "document.body.scrollHeight=";
+str += document.body.scrollHeight;
+str += "<br>";
+
+
+str += "document.body.clientHeight=";
+str += document.body.clientHeight;
+str += "<br>";
+
+document.getElementById("mydiv").innerHTML=str;
+</script>
+</body>
+</html>
