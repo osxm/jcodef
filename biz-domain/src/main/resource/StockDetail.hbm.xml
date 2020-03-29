@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+		 PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+		 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.osxm.jcodef.biz.stock.model.StockDetail" table="stock_detail">
+		<composite-id name="uionPKID"
+			class="cn.osxm.jcodef.biz.stock.model.StockUionPKID">
+			<key-property name="Id" />
+			<key-property name="sdate" />
+		</composite-id>
+		<property name="sname" type="java.lang.String">
+			<column name="sname" />
+		</property>
+		<property name="open" type="float">
+			<column name="open" />
+		</property>
+		<property name="close" type="float">
+			<column name="close" />
+		</property>
+		<property name="high" type="float">
+			<column name="high" />
+		</property>
+		<property name="low" type="float">
+			<column name="low" />
+		</property>
+		<property name="volume" type="float">
+			<column name="volume" />
+		</property>
+	</class>
+</hibernate-mapping>
