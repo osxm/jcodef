@@ -28,3 +28,5 @@ hs_err_pid*
 **/.project
 **/.classpath
 */.gitignore
+
+jcodef-webframe/src/main/webapp/ckeditor/node_modules

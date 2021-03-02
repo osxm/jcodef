@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 
 import org.junit.Test;
+import org.wildfly.common.Assert;
 
 /**
  * @ClassName: FileTests
@@ -32,5 +33,12 @@ public class FileTests {
 		System.out.println(filePath);
 		System.out.println(fileName);
 		System.out.println(canonicalPath);
+	}
+	
+	
+	@Test
+    public void sep() {
+		String pathSep = File.pathSeparator;
+		Assert.assertTrue(pathSep.equals(";"));  //Win7 , 10 is ; 
 	}
 }
