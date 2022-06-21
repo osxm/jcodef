@@ -14,7 +14,7 @@
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<mysqlconn.version>8.0.16</mysqlconn.version>
+		<mysqlconn.version>8.0.28</mysqlconn.version>
 		<shiro.version>1.4.1</shiro.version>
 	</properties>
 
